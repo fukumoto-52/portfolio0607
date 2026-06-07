@@ -297,7 +297,7 @@ const IndexPage = () => {
         </FadeIn>
 
       <section id="a04" className={style.workSec}>
-      <FadeIn>
+     
         <div className="content">
           <div className={style.titleBox}>
             <span>Work</span>
@@ -369,7 +369,8 @@ const IndexPage = () => {
             )}
           </div>
         </div>
-        </FadeIn>
+
+    
       </section>
     </Layout>
   )

@@ -29,14 +29,13 @@ const PageTop = ({ showBelow }) => {
   return (
     <div className={`${style.page_top} ${show ? style.show : ''} is-pc`}>
       <button 
-        onClick={handleClick} 
-        id="scrollBtn" 
-        className={style.scrollBtn} 
-        aria-label="to top"
-      >
-        <img src={Img} alt="page top" /><br />
-        TOP
-      </button>
+  onClick={handleClick} 
+  id="scrollBtn" 
+  className={style.scrollBtn} 
+  aria-label="to top"
+>
+  TOP
+</button>
     </div>
   );
 };
