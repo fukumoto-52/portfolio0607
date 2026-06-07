@@ -9,9 +9,8 @@ import Seo from "../components/seo"
 import * as style from "./index.module.scss"
 import sample from "../images/sample.jpg"
 
-import top01 from "../images/sample.jpg"
-import top02 from "../images/sample.jpg"
-import myimg from "../images/sample.jpg"
+import topkv from "../images/topkv.jpg"
+import myimg from "../images/myimg.jpg"
 
 import hobby01 from "../images/hobby01.png"
 import hobby02 from "../images/hobby02.png"
@@ -158,7 +157,7 @@ const IndexPage = () => {
         <div className={style.topFlex}>
           <div className={style.imgBox}>
             <img
-              src={top01}
+              src={topkv}
               alt="トップヴィジュアル"
               className={style.topimg01}
             />
@@ -182,10 +181,18 @@ const IndexPage = () => {
             <div className={style.aboutText}>
               <div className={style.nameBox}>
                 <span>NAME :</span>
-                <h3>福本 虹杏</h3>
+                <h3><ruby>福<rt>ふく</rt>本<rt>もと</rt>虹<rt>に</rt>杏<rt>あ</rt></ruby> </h3>
               </div>
               <p className={style.intro}>
-                私はフロントエンドエンジニアとして、ユーザーにとって使いやすく魅力的なウェブサイトやアプリケーションを作ることに情熱を持っています。最新の技術を駆使して、レスポンシブでパフォーマンスの高いプロジェクトを提供しています。
+                はじめまして、福本にあです。
+                <br />
+                WebデザイナーとしてさまざまなWebサイトのデザイン・制作に携わってきました。<br />
+                <br />
+                短納期の制作案件を多く経験してきたため、スケジュールを意識しながら効率よく制作を進めることが得意です。
+                <br />
+                制作業務だけでなく、メンバーのタスク管理や進行サポートも担当し、チーム全体がスムーズに動けるよう意識してきました。
+                <br />
+                限られた時間の中でも品質を大切にしながら、一つ一つの案件に取り組んでいます。
               </p>
               <div className={style.hobbyBox}>
                 <span>HOBBY</span>
@@ -294,17 +301,15 @@ const IndexPage = () => {
             <ul className={style.workList}>
               {work.map((item, index) => (
                 <li
-                onClick={() => {
-                  setOpenIndex(index)
-                  setIsOpen(true)
-                }}
-                className={style.workItem}
-              >
+                  onClick={() => {
+                    setOpenIndex(index)
+                    setIsOpen(true)
+                  }}
+                  className={style.workItem}
+                >
                   <img src={item.topimg} alt="制作TOPイメージ" />
 
-                  <button >
-                    詳しく見る
-                  </button>
+                  <button>詳しく見る</button>
                 </li>
               ))}
             </ul>
@@ -343,14 +348,14 @@ const IndexPage = () => {
                     </div>
                     {work[openIndex].subimg && (
                       <div className={style.modalsubBox}>
-                          <p className={style.subBox}>下層ページ一部抜粋</p>
-                          <FadeIn>
+                        <p className={style.subBox}>下層ページ一部抜粋</p>
+                        <FadeIn>
                           <img
                             src={work[openIndex].subimg}
                             alt="制作物イメージ"
-                            />
-                            </FadeIn>
-                        </div>
+                          />
+                        </FadeIn>
+                      </div>
                     )}
                   </div>
                 </div>

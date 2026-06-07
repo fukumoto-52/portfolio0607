@@ -10,6 +10,11 @@ header {
   background-color: #d6a07ac0;
   backdrop-filter: blur(10px);
   height: 60px;
+  padding: 0 5px;
+
+  @media (max-width:550px) {
+    justify-content: flex-end;
+  }
 
   & .logo {
     display: flex;
@@ -28,7 +33,7 @@ header {
     height: 100%;
     overflow-x: auto;
   
-    @media (min-width: 801px) {
+    @media (min-width:550px) {
       display: block;
     }
     
@@ -93,35 +98,15 @@ header {
   }
 }
 
-.headercontact {
- 
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 1.1px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background: var(--color-main);
-  padding: 10px;
-  color: #FFF;
-  margin-right: 10px;
-
-  & img{
-    width: 50px;
-  }
-  @media (max-width: 801px) {
-    display: none;
-  }
-}
 
 .menu {
   width: 50px;
   height: 50px;
-  background-color: #fff;
+  background-color: var(--color-base);
+  border-radius: 50%;
   
 
-  @media (min-width: 801px) {
+  @media (min-width:550px) {
     display: none;
   }
 }
@@ -134,10 +119,10 @@ header {
   width: 100vw;
   height: 100vh;
   overflow-y: scroll;
-  background: #ef8fa2;
+  background: var(--color-sub);
   background-image: url("https://www.transparenttextures.com/patterns/brick-wall.png");
 
-  @media (min-width: 801px) {
+  @media (min-width:550px) {
     display: none;
   }
 
@@ -160,7 +145,8 @@ header {
     flex-direction: column;
     align-items: center;
     margin-top: 112px;
-    padding-bottom: 80px;
+    padding:  0 20px 0;
+    gap: 10px;
   
     .sp_nav_item {
       width: 100%;
@@ -170,13 +156,13 @@ header {
         display: flex;
         justify-content: center;
         width: 100%;
-        padding: 10px 0;
         font-size: 1.8rem;
         font-weight: var(--font-weight-semi-bold);
         line-height: 1.6;
-        color: var(--color-light);
+        color: var(--color-font);
         letter-spacing: 0.15em;
-        font-family: var(--font-en);
+        font-family: var(--font-main);
+        border-bottom: 1px dotted var(--color-font);
       }
     }
   }
