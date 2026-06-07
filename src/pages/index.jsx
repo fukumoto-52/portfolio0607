@@ -5,6 +5,7 @@ import { StaticImage } from "gatsby-plugin-image"
 
 import Layout from "../components/Layout"
 import FadeIn from "../components/FadeIn"
+import ZoomOut from "../components/ZoomOut"
 import Seo from "../components/seo"
 import * as style from "./index.module.scss"
 import sample from "../images/sample.jpg"
@@ -163,7 +164,9 @@ const IndexPage = () => {
             />
           </div>
           <div className={style.kvtitle}>
+            <ZoomOut>
             <h2>Portfolio</h2>
+            </ZoomOut>
           </div>
         </div>
       </sectin>
@@ -265,6 +268,7 @@ const IndexPage = () => {
         </div>
       </section>
 
+        <FadeIn>
       <section id="a03" className={style.skillSec}>
         <div className={style.titleBox}>
           <span>Skill</span>
@@ -290,8 +294,10 @@ const IndexPage = () => {
           })}
         </ul>
       </section>
+        </FadeIn>
 
       <section id="a04" className={style.workSec}>
+      <FadeIn>
         <div className="content">
           <div className={style.titleBox}>
             <span>Work</span>
@@ -363,6 +369,7 @@ const IndexPage = () => {
             )}
           </div>
         </div>
+        </FadeIn>
       </section>
     </Layout>
   )
