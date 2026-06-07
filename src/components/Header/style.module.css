@@ -1,0 +1,298 @@
+header {
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  overflow: visible;
+  background-color: #d6a07ac0;
+  backdrop-filter: blur(10px);
+  height: 60px;
+
+  & .logo {
+    display: flex;
+    align-items: center;
+    margin-left: 24px;
+  
+    & img {
+      width: 240px;
+      @media(max-width:700px){
+        width: 140px;
+      }
+    }
+  }
+  & .nav {
+    display: none;
+    height: 100%;
+    overflow-x: auto;
+  
+    @media (min-width: 801px) {
+      display: block;
+    }
+    
+    & .nav_list {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      gap: 20px;
+    
+      & .nav_item {
+        white-space: nowrap;      
+        font-weight: 900;
+        & a {
+          position: relative;
+          font-size: clamp(16px , 1.1vw ,18px);
+          letter-spacing: 0.15em;
+          font-style: italic;
+          font-weight: var(--font-en);
+          color: #fff;
+          &:hover {
+            color: var(--color-main);
+            
+          }
+        }
+        & a[aria-current=page] {
+          color: var(--color-main);
+          text-shadow: 1px 1px 1px  #fff;
+        }
+      }
+    }
+    & .nav_job{
+      display: block;
+      cursor: pointer;
+      padding: 20px 0;
+      & p{
+        font-size: 16px;
+        font-weight: var(--font-weight-semi-bold);
+        letter-spacing: 0.15em;
+      }
+      & .job_item {
+        opacity: 0;
+        position: absolute;
+        top: 80px;
+        left: 50%;
+        margin-left: 50px;
+        transform: translateX(-50%);
+        width: 200px;
+        background-color: var(--color-accent);
+        padding: 10px;
+        border-radius: 20px;
+        text-align: center;
+        transition: all 0.2s ease-in-out;
+      }
+      &:hover .job_item{
+        opacity: 1;
+      }
+      & li:hover{
+        opacity: 0.5;
+        transition: opacity 0.1s ease-in-out;
+      }
+    }
+  }
+}
+
+.headercontact {
+ 
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.1px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-main);
+  padding: 10px;
+  color: #FFF;
+  margin-right: 10px;
+
+  & img{
+    width: 50px;
+  }
+  @media (max-width: 801px) {
+    display: none;
+  }
+}
+
+.menu {
+  width: 50px;
+  height: 50px;
+  background-color: #fff;
+  
+
+  @media (min-width: 801px) {
+    display: none;
+  }
+}
+
+
+.sp_menu {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  width: 100vw;
+  height: 100vh;
+  overflow-y: scroll;
+  background: #ef8fa2;
+  background-image: url("https://www.transparenttextures.com/patterns/brick-wall.png");
+
+  @media (min-width: 801px) {
+    display: none;
+  }
+
+  & .close_btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 70px;
+    height: 70px;
+  }
+}
+
+.sp_nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .sp_nav_list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 112px;
+    padding-bottom: 80px;
+  
+    .sp_nav_item {
+      width: 100%;
+    
+    
+      & a {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        padding: 10px 0;
+        font-size: 1.8rem;
+        font-weight: var(--font-weight-semi-bold);
+        line-height: 1.6;
+        color: var(--color-light);
+        letter-spacing: 0.15em;
+        font-family: var(--font-en);
+      }
+    }
+  }
+}
+
+
+
+/* SNSデザイン */
+/* .sns_link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 218px;
+  margin: 90px auto 60px;
+
+  & a {
+    display: flex;
+  }
+} */
+
+/* メニューアイテムのホバースタイル */
+.menu_item:hover .drop_menu_list {
+  transform: scaleY(1) translateX(-50%); /* ドロップダウンメニューの表示 */
+  transform: scaleY(1) translateX(-50%);
+  -webkit-transform:  scaleY(1) translateX(-50%);
+  -ms-transform: scaleY(1) translateX(-50%);
+  @media (max-width: 800px) {
+    transform: none;
+  }
+  
+}
+
+
+
+/* ドロップダウンメニュー */
+.drop_menu {
+  position: relative;
+  @media (max-width: 1000px) {
+    flex-direction: column;
+  }
+}
+.drop_menu_list {
+  left: 50%;
+  position: absolute;
+  top: 100%;
+  transform: scaleY(0) translateX(-50%); /* ドロップダウンメニューの非表示 */
+  transform-origin: center top; /* 変形を適応する基準を設定 */
+  transition: transform .3s; /* 表示の変化をアニメーション化 */
+  width: max-content;
+  z-index: 1;
+  @media (max-width: 1000px) {
+    transform: none;
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+}
+.drop_menu_item {
+  background: #000000bf;
+  transition: opacity .3s; /* 不透明度の変化をアニメーション化 */
+  /* padding: 8px; */
+  @media (max-width: 1000px) {
+    background: none;
+  }
+  & ::after {
+    display: none;
+  }
+  
+}
+.drop_menu_item a {
+  transition: 0.3s;
+  padding: 8px;
+  width: 100%;
+  @media (max-width: 1000px) {
+    padding: 8px 16px 8px 32px;
+    position: relative;
+    font-size: 14px;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 10px;
+      height: 1px;
+      left: 12px;
+      top: 50%;
+      background: #FFF;
+    }
+  }
+}
+.drop_menu_item a:hover {
+  color: var(--color-main);
+  @media (max-width: 1000px) {
+    color: #FFF;
+  }
+}
+.linkbox {
+  display: flex;
+}
+
+.spcontact {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  & a {
+    width: 50%;
+    padding: 16px 0;
+    text-align: center;
+    border-top: 1px solid var(--color-main);
+    border-right: 1px solid var(--color-main);
+    color: var(--color-main);
+    background: #ffffff;
+  }
+  & a:nth-of-type(2) {
+    border-top: 1px solid var(--color-sub);
+    border-left: 1px solid var(--color-sub);
+    border-right: none;
+    color: var(--color-sub);
+  }
+}
