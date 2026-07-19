@@ -93,10 +93,10 @@ const skill = [
         title: "WordPress",
         do: "○",
       },
-      {
-        title: "React",
-        do: "○",
-      },
+      // {
+      //   title: "React",
+      //   do: "○",
+      // },
     ],
   },
 ]
